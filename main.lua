@@ -232,9 +232,11 @@ function SelectionLibrary.Init()
         AddAction("Activated", Enum.UserInputType.MouseButton1, function(ActionName, InputState, InputObject) 
             local SelectedData = SelectionLibrary.SelectedData
             
-            if InputState == Enum.UserInputState.Begin then
-                if SelectedData["Activated"] then
-                    SelectedData["Activated"](ActionName, InputState, InputObject);
+            if SelectedData then
+                if InputState == Enum.UserInputState.Begin then
+                    if SelectedData["Activated"] then
+                        SelectedData["Activated"](ActionName, InputState, InputObject);
+                    end
                 end
             end
         end)
