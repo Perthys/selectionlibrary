@@ -62,7 +62,7 @@ PositionMap = {
     };
 }
 
-local function ConverToPosition(Arg1)
+local function ConvertToPosition(Arg1)
     return PositionMap[typeof(Arg1)](Arg1);
 end
 
@@ -136,8 +136,8 @@ local function GetHighlight()
 end
 
 local function Raycast(StartPosition, EndPosition, RaycastParams)
-    StartPosition = ConverToPosition(StartPosition);
-    EndPosition = ConverToPosition(EndPosition);
+    StartPosition = ConvertToPosition(StartPosition);
+    EndPosition = ConvertToPosition(EndPosition);
     
     local Expression = (StartPosition - EndPosition);
     
